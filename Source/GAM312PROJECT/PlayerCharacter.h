@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Camera/CameraComponent.h"
 #include "GameFramework/Character.h"
 #include "PlayerCharacter.generated.h"
 
@@ -27,6 +28,25 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UFUNCTION()
+	void MoveForward(float axisValue);
+
+	UFUNCTION()
+	void MoveRight(float axisValue);
+
+	UFUNCTION()
+	    void StartJump();
+
+	UFUNCTION()
+	    void StopJump();
+
+	UFUNCTION()
+	    void FindObject();
+
+		UPROPERTY(VisibleAnywhere);
+		UCameraComponent* PlayerCamComp;
+
+
+
 
 
 };
